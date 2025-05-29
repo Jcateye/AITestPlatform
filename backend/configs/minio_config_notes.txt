@@ -1,0 +1,26 @@
+# MinIO Configuration Requirements
+
+The application will require the following environment variables or configuration parameters
+to connect to and interact with a MinIO object storage service:
+
+1.  **`MINIO_ENDPOINT`**:
+    *   Description: The hostname or IP address and port of the MinIO server.
+    *   Example: `minio.example.com:9000` or `localhost:9000`
+
+2.  **`MINIO_ACCESS_KEY_ID`**:
+    *   Description: The access key (similar to a username) for authenticating with the MinIO server.
+    *   Example: `AKIAIOSFODNN7EXAMPLE`
+
+3.  **`MINIO_SECRET_ACCESS_KEY`**:
+    *   Description: The secret key (similar to a password) for authenticating with the MinIO server.
+    *   Example: `wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY`
+
+4.  **`MINIO_BUCKET_NAME`**:
+    *   Description: The name of the bucket where the application will store and retrieve files (e.g., ASR audio files, TTS output files).
+    *   Example: `ai-eval-platform-data`
+
+5.  **`MINIO_USE_SSL`**:
+    *   Description: A boolean flag indicating whether to use HTTPS (SSL/TLS) to connect to the MinIO server.
+    *   Example: `true` or `false` (typically `true` for production environments)
+
+These parameters will be used by the backend services, particularly the core engine and job management components, to handle file uploads (e.g., test audio data) and downloads (e.g., generated evaluation reports or artifacts). It's crucial to ensure these are configured correctly in the application's runtime environment (e.g., via environment variables, configuration files, or a secrets management system).
